@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>학원에서 배우는 것</title>
-</head>
-<body>
-    <div>아직 배우는 중이라서 내용 없음</div>
-</body>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+    }
+
+    .golink {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 7rem;
+      font-weight: 900;
+      padding: 100px 0;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    h1 a:hover {
+      background: linear-gradient(45deg, #c5189a 15%, #2377ff);
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    .golink p {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .golink p span {
+      color: #c5189a;
+      font-weight: 700;
+    }
+  </style>
+  <body>
+    <div class="golink">
+      <h1>
+        <a href="https://jaeeedev.github.io/document/">document로 이동</a>
+      </h1>
+      <p>종강까지 <span></span>일</p>
+    </div>
+    <script>
+      const span = document.querySelector("span");
+      const today = new Date();
+      const dday = new Date(2022, 7, 18);
+      const gap = dday.getTime() - today.getTime();
+      const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
+
+      span.innerHTML = -`${result}`;
+    </script>
+  </body>
 </html>
